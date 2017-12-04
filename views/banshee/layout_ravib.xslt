@@ -78,7 +78,7 @@
 		<xsl:if test="not(/output/user)">
 		<span>Copyright &#169; by Hugo Leisink</span>
 		</xsl:if>
-		<span>Local copy from <a href="https://www.ravib.nl/">www.ravib.nl</a></span>
+		<span>Local copy of <a href="https://www.ravib.nl/">www.ravib.nl</a></span>
 		<xsl:if test="/output/user">
 		<span>Ingelogd als <a href="/profile"><xsl:value-of select="/output/user" /></a></span>
 		<span><a href="/session">Sessiebeheer</a></span>

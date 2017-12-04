@@ -57,6 +57,25 @@
 			$this->output->close_tag();
 		}
 
+		/* Generate a valid filename out of a string
+		 *
+		 * INPUT:  string test
+		 * OUTPUT: string filename
+		 * ERROR:  -
+		 */
+		protected function generate_filename($str) {
+			$valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
+
+			$len = strlen($str);
+			for ($i = 0; $i < $len; $i++) {
+				if (strpos($valid, substr($str, $i, 1)) === false) {
+					$str = substr($str, 0, $i)."-".substr($str, $i + 1);
+				}
+			}
+
+			return preg_replace('/-+/', "-", $str);
+		}
+
 		/* Default execute function
 		 *
 		 * INPUT:  -
