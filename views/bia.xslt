@@ -123,7 +123,7 @@
 <ul>
 <li><b>Openbaar:</b> Informatie mag door iedereen ingezien worden.</li>
 <li><b>Intern:</b> Informatie mag alleen door eigen medewerkers en eventueel een select aantal zakelijke partners ingezien worden.</li>
-<li><b>Vertrouwelijk:</b> Informatie mag door een select aantal eigen mederwerkers ingezien worden. Inbreuk op de vertrouwelijkheid heeft een serieuze impact op de eigen organisatie. Vertrouwelijkheid is waarschijnlijk afgedwongen door (privacy)wetgeving.</li>
+<li><b>Vertrouwelijk:</b> Informatie mag door een select aantal eigen medewerkers ingezien worden. Inbreuk op de vertrouwelijkheid heeft een serieuze impact op de eigen organisatie. Vertrouwelijkheid is waarschijnlijk afgedwongen door (privacy)wetgeving.</li>
 <li><b>Geheim:</b> Informatie mag door een select aantal eigen medewerkers ingezien worden. Inbreuk op de vertrouwelijkheid heeft een serieuze impact op de eigen organisatie, maar ook op andere instanties. Vertrouwelijkheid is waarschijnlijk afgedwongen door wetgeving (staatsgeheimen).</li>
 </ul>
 <h3>Waarde</h3>
