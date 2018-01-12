@@ -54,8 +54,6 @@
 <input type="text" id="number" name="number" value="{measure/number}" class="form-control" />
 <label for="name">Name:</label>
 <input type="text" id="name" name="name" value="{measure/name}" class="form-control" />
-<label for="description">Description:</label>
-<textarea id="description" name="description" class="form-control"><xsl:value-of select="measure/description" /></textarea>
 
 <h2>Threats</h2>
 <div class="threats">
