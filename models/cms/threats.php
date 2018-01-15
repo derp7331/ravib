@@ -183,6 +183,7 @@
 
 		public function delete_threat($threat_id) {
 			$queries = array(
+				array("delete from case_bia_threat where threat_id=%d", $threat_id),
 				array("delete from controls where threat_id=%d", $threat_id),
 				array("delete from case_threat where threat_id=%d", $threat_id),
 				array("delete from threats where id=%d", $threat_id));
