@@ -137,7 +137,7 @@
 				array("delete from overruled where iso_measure_id=%d", $measure_id),
 				array("delete from iso_measures where id=%d", $measure_id));
 
-			return $this->transaction($queries);
+			return $this->db->transaction($queries);
 		}
 	}
 ?>
