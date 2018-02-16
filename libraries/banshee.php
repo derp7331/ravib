@@ -36,7 +36,7 @@
 	 * OUTPUT: -
 	 * ERROR:  -
 	 */
-	function __autoload($class_name) {
+	function banshee_autoload($class_name) {
 		$rename = array(
 			"https"               => "http",
 			"jpeg_image"          => "image",
@@ -350,6 +350,10 @@
 		list($key, $value) = explode("=", chop($line), 2);
 		define(trim($key), trim($value));
 	}
+
+	/* Autoloader
+	 */
+	spl_autoload_register("banshee_autoload");
 
 	/* PHP settings
 	 */
