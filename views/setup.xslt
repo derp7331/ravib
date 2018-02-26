@@ -94,19 +94,6 @@
 
 <!--
 //
-//  Update PIA template
-//
-//-->
-<xsl:template match="update_pia">
-<xsl:call-template name="show_messages" />
-<p>De huidige PIA regels zijn verouderd en dienen te worden bijgewerkt.</p>
-<form action="/{/output/page}" method="post">
-<input type="submit" name="submit_button" value="PIA bijwerken" class="btn btn-default" />
-</form>
-</xsl:template>
-
-<!--
-//
 //  Credentials template
 //
 //-->
