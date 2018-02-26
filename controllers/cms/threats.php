@@ -40,7 +40,7 @@
 				$this->output->add_tag("result", "Database error.");
 				return;
 			}
-			
+
 			if (is_array($threat["iso_links"]) == false) {
 				$threat["iso_links"] = array();
 			}

@@ -13,11 +13,6 @@
 				return "php_extensions";
 			}
 
-			exec("which mysql", $output, $result);
-			if ($result != 0) {
-				return "mysql_client";
-			}
-
 			if ($this->db->connected == false) {
 				$db = new MySQLi_connection(DB_HOSTNAME, DB_DATABASE, DB_USERNAME, DB_PASSWORD);
 			} else { 
@@ -158,11 +153,39 @@
 		/* Import SQL script from file
 		 */
 		public function import_sql() {
-			exec("mysql -h '".DB_HOSTNAME."' -u '".DB_USERNAME."' --password='".DB_PASSWORD."' '".DB_DATABASE."' < ../database/mysql.sql", $output, $result);
-			if ($result != 0) {
-				$this->output->add_message("Fout bij importeren van SQL bestand.");
+			if (($queries = file("../database/mysql.sql")) === false) {
+				$this->view->add_message("Can't read the database/mysql.sql file.");
 				return false;
 			}
+
+			if (($db_link = mysqli_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE)) === false) {
+				$this->view->add_message("Error while connecting to the database.");
+				return false;
+			}
+
+			$query = "";
+			foreach ($queries as $line) {
+				if (($line = trim($line)) == "") {
+					continue;
+				}
+
+				$start = substr($line, 0, 2);
+				if ($start == "--") {
+					continue;
+				}
+
+				$query .= $line;
+
+				if (substr($query, -1) == ";") {
+					if (mysqli_query($db_link, $query) === false) {
+						$this->view->add_message("Error while executing query [%s].", $query);
+						return false;
+					}
+					$query = "";
+				}
+			}
+
+			mysqli_close($db_link);
 
 			$this->db->query("update users set status=%d", USER_STATUS_CHANGEPWD);
 			$this->settings->secret_website_code = random_string(32);

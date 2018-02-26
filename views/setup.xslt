@@ -21,19 +21,6 @@
 
 <!--
 //
-//  MySQL client template
-//
-//-->
-<xsl:template match="mysql_client">
-<p>The MySQL command line client is missing. Install it and refresh this page.</p>
-
-<div class="btn-group">
-<a href="/{/output/page}" class="btn btn-default">Refresh</a>
-</div>
-</xsl:template>
-
-<!--
-//
 //  Database settings template
 //
 //-->

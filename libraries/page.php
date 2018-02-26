@@ -52,7 +52,7 @@
 				}
 			} else {
 				list($this->url) = explode("?", $_SERVER["REQUEST_URI"], 2);
-				$path = trim($this->url, "/");
+				$path = rtrim(substr($this->url, 1), "/");
 				if (valid_input($path, VALIDATE_URL, VALIDATE_NONEMPTY)) {
 					$page = $path;
 				} else if ($this->user->logged_in) {

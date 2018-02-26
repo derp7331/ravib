@@ -38,12 +38,7 @@
 	 */
 	function banshee_autoload($class_name) {
 		$rename = array(
-			"https"               => "http",
-			"jpeg_image"          => "image",
-			"png_image"           => "image",
-			"gif_image"           => "image",
-			"pop3s"               => "pop3",
-			"banshee_website_ssl" => "banshee_website");
+			"https" => "http");
 
 		$class_name = strtolower($class_name);
 		if (isset($rename[$class_name])) {

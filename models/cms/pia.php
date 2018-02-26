@@ -5,6 +5,7 @@
 
 	class cms_pia_model extends tablemanager_model {
 		protected $table = "pia_rules";
+		protected $order = "number";
 		protected $elements = array(
 			"number" => array(
 				"label"    => "Number",
@@ -55,7 +56,7 @@
 			"law_section" => array(
 				"label"    => "Section of the law",
 				"type"     => "varchar",
-				"overview" => false,
+				"overview" => true,
 				"required" => false));
 	}
 ?>
