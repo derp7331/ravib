@@ -17,8 +17,6 @@
 					$this->model->import_sql();
 				} else if ($_POST["submit_button"] == "Database bijwerken") {
 					$this->model->update_database();
-				} else if ($_POST["submit_button"] == "PIA bijwerken") {
-					$this->model->update_pia();
 				} else if ($_POST["submit_button"] == "Set password") {
 					$this->model->set_admin_credentials($_POST);
 				}
@@ -48,9 +46,6 @@
 					ob_clean();
 					break;
 				case "update_db":
-					ob_clean();
-					break;
-				case "update_pia":
 					ob_clean();
 					break;
 				case "credentials":
